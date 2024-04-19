@@ -1,6 +1,7 @@
-import 'bulma/css/bulma.css';
-import './App.scss';
 import { useState } from 'react';
+import 'bulma/css/bulma.css';
+
+import './App.scss';
 
 export const goods = [
   'Dumplings',
@@ -25,7 +26,7 @@ export const App = () => {
   return (
     <main className="section container">
       <h1 className="title is-flex is-align-items-center">
-        {selectedGood.length > 1 ? (
+        {selectedGood ? (
           <>
             {selectedGood} is selected
             <button
@@ -47,7 +48,7 @@ export const App = () => {
               key={good}
               data-cy="Good"
               className={
-                selectedGood === good ? 'has-background-success-light' : ''
+                selectedGood === good && 'has-background-success-light'
               }
             >
               <td>
